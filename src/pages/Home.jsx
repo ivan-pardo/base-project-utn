@@ -15,8 +15,13 @@ const Home = () => {
     fetchingProducts();
   }, []);
 
-  const handleDelete = (id) => {
-    console.log("Borrando producto", id)
+  const handleDelete = async (id) => {
+    const response = await fetch(`https://fakestoreapi.com/products/${id}`, {method:"DELETE"});
+
+    if(response.ok){
+      setProducts(prevProduct => prevProduct.filter((product) => product.id != id ))
+      console.log(`Se borró el ${id}`)
+    }
   }
 
     return (
