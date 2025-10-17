@@ -23,7 +23,7 @@ const Home = () => {
       console.log(`Se borró el ${id}`)
     }
   }
-
+// METODO POST PARA PRODUCTO Y AVERIGUAR OTROS METODOS FETCH
     return (
       <Layout>
         <section>
